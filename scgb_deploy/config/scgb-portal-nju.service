@@ -1,0 +1,31 @@
+[Unit]
+Description=SCGB Portal - Single Cell Gene Expression Database (NJU)
+After=network.target
+
+[Service]
+Type=simple
+User=scgb
+WorkingDirectory=/opt/scgb-portal/backend
+Environment=SCEQTL_DB_PATH=/opt/scgb-portal/data/unified_metadata.db
+Environment=SCEQTL_CORS_ORIGINS=https://biobigdata.nju.edu.cn
+Environment=SCEQTL_RATE_LIMIT=60
+Environment=PYTHONPATH=/opt/scgb-portal/backend
+
+# 启动命令 - 使用 13009 端口
+ExecStart=/opt/scgb-portal/venv/bin/python -m uvicorn api.main:app \
+    --host 127.0.0.1 \
+    --port 13009 \
+    --workers 4 \
+    --proxy-headers \
+    --forwarded-allow-ips '*'
+
+# 重启策略
+Restart=always
+RestartSec=5
+
+# 资源限制
+LimitAS=4G
+LimitRSS=4G
+
+[Install]
+WantedBy=multi-user.target
